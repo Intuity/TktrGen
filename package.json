@@ -1,0 +1,23 @@
+{
+  "name": "ticket_pdf_generation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Birch",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.2",
+    "bwip-js": "^0.16.0",
+    "csv": "^1.1.0",
+    "handlebars": "^4.0.5",
+    "nodemailer": "^2.4.2",
+    "nodemailer-html-to-text": "^2.1.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pdf-merge": "0.0.4",
+    "spindrift": "0.0.6",
+    "wkhtmltopdf": "^0.3.0"
+  }
+}
