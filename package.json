@@ -17,6 +17,7 @@
     "nodemailer-html-to-text": "^2.1.0",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "pdf-merge": "0.0.4",
+    "pngjs": "^3.2.0",
     "spindrift": "0.0.6",
     "wkhtmltopdf": "^0.3.0"
   }

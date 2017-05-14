@@ -9,6 +9,9 @@ var renderer = new Tickets();
 renderer.set_output_dir(__dirname + '/output');
 renderer.set_working_dir(__dirname + '/singles');
 
+// Set that QR codes should be generated in white
+renderer.set_code_colour(0, 0, 0);
+
 // Register any templates and accompanying images
 var normal_tkt = renderer.register_template(
     'normal_tkt',                           // Template key
@@ -18,6 +21,12 @@ var normal_tkt = renderer.register_template(
 );
 normal_tkt.register_image('colour_backer',  image_dir + 'colour_backer.jpg' );
 normal_tkt.register_image('detail_overlay', image_dir + 'normal_overlay.png');
+
+// To allow randomisation of the colour backer, register for rendering callbacks
+normal_tkt.set_callback(function(template, ticket, index) {
+    template.set_parameter('backer_left', ((Math.random() * 49.0) % 49) + '%');
+    template.set_parameter('backer_top',  ((Math.random() * 22.0) % 22) + '%');
+});
 
 // Load up any data required for these templates and run the rendering operation
 normal_tkt.load_data(__dirname + '/tickets.csv', function(error) {
