@@ -9,17 +9,20 @@ var renderer = new Tickets();
 renderer.set_output_dir(__dirname + '/output');
 renderer.set_working_dir(__dirname + '/singles');
 
-// Set that QR codes should be generated in black
-renderer.set_code_colour(0, 0, 0);
+// Set that matrix codes should be generated in white
+renderer.set_code_colour(255, 255, 255);
+
+// Set that matrix codes should be generated in QR format
+renderer.set_code_format('qr');
 
 // Register any templates and accompanying images
-var normal_tkt = renderer.register_template(
+var normal_tkt = renderer.register_single_sided_template(
     'normal_tkt',                           // Template key
-    template_dir + 'singles_front.html',    // Path to HTML layout for ticket's front
+    // template_dir + 'singles_front.html',    // Path to HTML layout for ticket's front
     template_dir + 'singles_back.html',     // Path to HTML layout for ticket's back
     '215.98mm', '76.03mm'                   // Size of the ticket (width, height)
 );
-normal_tkt.register_image('colour_backer',  image_dir + 'colour_backer.jpg' );
+normal_tkt.register_image('colour_backer',  image_dir + 'colour_backer.png' );
 normal_tkt.register_image('detail_overlay', image_dir + 'normal_overlay.png');
 
 // To allow randomisation of the colour backer, register for rendering callbacks
