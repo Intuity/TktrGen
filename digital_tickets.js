@@ -6,7 +6,7 @@ var image_dir    = __dirname + '/Images/';
 
 // Create and setup an instance of rendering library
 var renderer = new Tickets();
-renderer.set_output_dir(__dirname + '/digitals');
+renderer.set_output_dir(__dirname + '/output');
 
 // Set that QR codes should be generated in black
 renderer.set_code_colour(0, 0, 0);
