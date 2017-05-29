@@ -10,20 +10,32 @@
         height:100%;
         top:0;
         left:0;
+        /*background-color:#000;*/
         background-image:url(data:image/png;base64,{{colour_backer}});
-        /*background-image:url(./Images/colour_backer.jpg);*/
-        background-size:149.04% 122.72%;
+        /*background-image:url(../Images/colour_backer.png);*/
+        background-size:195.84% 202.45%;
         background-position:{{backer_left}} {{backer_top}};
         position:absolute;
         overflow:hidden;
     }
-    .theoverlay {
+    .normal_overlay {
         width:100%;
         height:100%;
         top:0;
         left:0;
-        background-image:url(data:image/png;base64,{{detail_overlay}});
-        /*background-image:url(./Images/normal_overlay.png);*/
+        background-image:url(data:image/png;base64,{{normal_overlay}});
+        /*background-image:url(../Images/normal_overlay.png);*/
+        background-size:100% 100%;
+        position:absolute;
+        overflow:hidden;
+    }
+    .vip_overlay {
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        background-image:url(data:image/png;base64,{{vip_overlay}});
+        /*background-image:url(../Images/normal_overlay.png);*/
         background-size:100% 100%;
         position:absolute;
         overflow:hidden;
@@ -31,18 +43,18 @@
     .ticketoutline {
         width:90.9%;
         height:77.6%;
-        left:4.55%;
+        left:1%;
         top:11.2%;
         position:absolute;
     }
     .detailarea {
-        width:31%;
+        width:35%;
         height:100%;
         box-sizing:border-box;
         text-align:center;
         position:absolute;
         top:0;
-        left:0.9%;
+        left:0;
     }
     .tickettype {
         font-family:"Futura";
@@ -50,7 +62,7 @@
         position:relative;
         text-transform:uppercase;
         padding-bottom:0.1cm;
-        color:#000;
+        color:#FFF;
     }
     .aztec {
         width:2.3cm;
@@ -64,17 +76,17 @@
         text-align:center;
         text-transform:uppercase;
         padding-top:0.1cm;
-        color:#000;
+        color:#FFF;
     }
     .ticketid {
         width:100%;
         font-family:consolas;
         font-size:15px;
-        color:#000;
+        color:#FFF;
     }
     .purchaseid {
         width:100%;
-        color:#000;
+        color:#FFF;
         font-family:consolas;
         font-size:10px;
         text-align:center;
@@ -84,7 +96,7 @@
 </head>
 <body>
     <div class="thepage">
-        <div class="theoverlay">
+        <div class="{{which_overlay}}">
             <div class="ticketoutline">
                 <div class="detailarea">
                     <div class="purchaseid">

@@ -26,7 +26,7 @@ var transport = nodemailer.createTransport(sgTransport({
 transport.use('compile', htmlToText());
 
 // Read in the message template
-var html_message = fs.readFileSync(__dirname + '/message.html');
+var html_message = fs.readFileSync(__dirname + '/Templates/message.html');
 
 async.waterfall([
     function(done) {
